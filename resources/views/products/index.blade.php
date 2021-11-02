@@ -22,7 +22,7 @@
                 <td>
                     <form action="{{route('products.destroy',$product->id)}}" method="POST">
                         <a href="{{route('products.show',$product->id)}}" class="btn btn-info">Show</a>
-                        <a href="{{route('products.update',$product->id)}}" class="btn btn-primary">Edit</a>
+                        <a href="{{route('products.edit',$product->id)}}" class="btn btn-primary">Edit</a>
                         <button class="btn btn-danger" >Delete </button>
                     </form>
                 </td>
