@@ -9,6 +9,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="col-lg-12 margin-tb">
+            <h2>Laravel Crud Application ( Products )</h2>
+        </div>
         @yield('content')
     </div>
 

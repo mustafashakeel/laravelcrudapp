@@ -14,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return  view('products.index');
+        $products = Product::latest()->paginate(5);
+
+        return  view('products.index', compact('products'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return " Create Prodcuts ";
+        return view('products.create');
     }
 
     /**
@@ -33,9 +35,12 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    //  here we will save the Create Products
     public function store(Request $request)
     {
-        //
+        Product::create($request->all());
+        return redirect()->route('products.index');
     }
 
     /**
@@ -46,7 +51,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return " Show Route ";
     }
 
     /**
@@ -57,7 +62,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return "Edit Route ";
     }
 
     /**
@@ -80,6 +85,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        return "Delete Route";
     }
 }
